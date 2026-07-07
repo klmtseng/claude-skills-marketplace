@@ -1,7 +1,7 @@
 # 領域包:內容/教材/資料集(第 1 段機械審計,寫成 `audit/content_audit.md`)
 
 適用:AI 生成教材、內容產線、翻譯/定義/題庫、資料集整理。
-首個標竿案例:study-forge 動詞故事(2026-07,見 `meta_eval/golden_cases/`)。
+標竿案例見 `meta_eval/golden_cases/`(第一個來自一次內容教材審計的真實案例,2026-07)。
 每項附「查了什麼指令/檔案」+ PASS/FLAG;能寫成腳本的優先寫腳本(可重跑)。
 
 ## C1 覆蓋度 vs 真值表(最常見的假宣稱)
@@ -23,13 +23,13 @@
 grep 所有 `verified/checked/approved` 類旗標,逐個問:**是誰、用什麼方式驗的?**
 模型自驗/機器閘門 ≠ 人工驗收;旗標措辭必須如實(如 `machine_gated + model_reviewed`)。
 **紅旗**:`human_verified: true` 但流程裡沒有人。
-> golden: study-forge stories.json 的 human_verified 由模型寫入,無家長抽查記錄。
+> golden: 內容教材審計案例中 stories.json 的 human_verified 由模型寫入,無人工抽查記錄。
 
 ## C5 快樂路徑偏誤(QA 的 QA)
 驗收測試是否只餵「正確輸入」?必須有**目標使用者的真實行為**測項:
 錯誤答案、亂打、空白、大小寫/全形、中途離開。互動內容另測:答錯時的回饋路徑是否完整。
 **紅旗**:所有自動化測試都以「填入正解」收尾;沒有任何一條錯誤路徑截圖/斷言。
-> golden: study-forge 全部 QA 以正解全綠通過,無一條錯誤輸入測試。
+> golden: 內容教材審計案例的全部 QA 以正解全綠通過,無一條錯誤輸入測試。
 
 ## C6 生成一致性與可重跑
 同一產線重跑會得到 schema 相容的產出嗎?環境(模型版本/venv/腳本路徑)被記錄了嗎?
