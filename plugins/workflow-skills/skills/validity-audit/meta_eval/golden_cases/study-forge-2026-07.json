@@ -1,0 +1,28 @@
+{
+  "case_id": "study-forge-2026-07",
+  "target": "study-forge/webapp (17篇動詞故事教材: stories.json/index.html/audio/gate_stories.py/雙PDF)",
+  "domain_packs": ["domain-content", "system-review", "fitness-review"],
+  "context": "強模型(Fable 5)人工專業評審找到 6 條;此為一般化 VA 的第一個標竿。審計者不得先看 expected_findings。",
+  "usage": "對 target 跑一般化 VA(T1+T2+T3),把發現與 expected_findings 逐條比對,記 hit/miss/新發現;recall = hits/6。",
+  "expected_findings": [
+    {"id": "P1", "tier": "T1", "checklist": "C1", "severity": "high",
+     "finding": "宣稱『涵蓋全部110動詞』,機器重數實為107;dive/lie/spell 因變化形易混淆被指示跳過後遺忘,無人交代缺漏",
+     "reproduce": "對照 data/verbs_grade7_v1.json 逐項清點 stories.json 各篇 verbs[]"},
+    {"id": "P6", "tier": "T1", "checklist": "C4", "severity": "high",
+     "finding": "stories.json meta.human_verified=true 由模型自己寫入;實際流程=機器閘門+模型抽查,無人工驗收",
+     "reproduce": "grep human_verified stories.json + 追產出流程記錄"},
+    {"id": "P5", "tier": "T1/T2", "checklist": "C5/S2", "severity": "medium",
+     "finding": "全部自動化 QA 以『填入正解』收尾;無任何錯誤輸入/亂打/空白的測試路徑",
+     "reproduce": "檢視 QA 腳本(playwright)全部以正確答案填入"},
+    {"id": "P4", "tier": "T2", "checklist": "S5/C6", "severity": "low",
+     "finding": "index.html 單檔538行(維護債);每開一篇建2個 new Audio() 未設 preload=none(行動流量);無 PWA manifest",
+     "reproduce": "wc -l index.html; grep 'new Audio' index.html; ls manifest*"},
+    {"id": "P2", "tier": "T3", "checklist": "F2/F1", "severity": "advisory",
+     "finding": "localStorage 只存主題偏好,無學習進度/錯題記錄;綜合複習均勻隨機抽20,不對準使用者弱點",
+     "reproduce": "grep localStorage index.html(僅 vs_theme); 讀 renderReview 的 sample() 邏輯"},
+    {"id": "P3", "tier": "T3", "checklist": "F3", "severity": "advisory",
+     "finding": "110動詞中52個只出現在1篇(接觸頻率高度不均,say 5篇 vs 一半動詞1篇),不利多語境記憶",
+     "reproduce": "統計 stories.json 各動詞跨篇出現次數直方圖"}
+  ],
+  "grading_notes": "hit 判定=語意等價即可,不要求同措辭;審計者若另發現本表以外且可重現的問題,記為 bonus(不扣分)。P1/P6 屬建造者(Fable 5)本人失手,已入 audit_ledger。"
+}
