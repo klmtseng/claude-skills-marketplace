@@ -1,0 +1,2 @@
+{"id": "example-2026-01-fabcite", "date": "2026-01", "project": "example-research", "category": "捏造/不可查證引用", "claim": "related work / 引用文獻", "miss": "LLM 生出不存在的論文標題當引用", "detector": "每一條引用的標題/id 必須解析到真實來源;列出所有引用逐一查證,查不到就刪或標「未查證」", "caught_by": "internal", "severity": "high"}
+{"id": "example-2026-02-tautology", "date": "2026-02", "project": "example-system", "category": "恆真句 PASS / 建構必然的檢查", "claim": "指標 X 不受操作 Y 影響", "miss": "檢查邏輯上由建構必然為真,卻被當成實證發現", "detector": "對每個 PASS 問:它有可能 FAIL 嗎?建構必然的標為「一致性檢查」,不得當實證證據", "caught_by": "reviewer", "severity": "high"}
