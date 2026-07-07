@@ -1,0 +1,13 @@
+{
+  "name": "klmtseng-workflows",
+  "owner": {
+    "name": "klmtseng"
+  },
+  "plugins": [
+    {
+      "name": "workflow-skills",
+      "source": "./plugins/workflow-skills",
+      "description": "8 battle-tested workflow skills: cost estimation, code recon, validity audit, agent memory, deterministic gating, stream capture, hostile-room communication, and GitHub+Vercel publishing."
+    }
+  ]
+}
