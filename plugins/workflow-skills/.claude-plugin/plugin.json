@@ -1,5 +1,5 @@
 {
   "name": "workflow-skills",
-  "description": "8 battle-tested Claude Code workflow skills for LLM cost engineering, codebase analysis, validity auditing, bounded agent memory, deterministic gate enforcement, stream capture, hostile-room communication, and GitHub+Vercel publishing.",
-  "version": "0.1.0"
+  "description": "9 battle-tested Claude Code workflow skills for paper/repo replication (paper-forge), LLM cost engineering, codebase analysis, validity auditing, bounded agent memory, deterministic gate enforcement, stream capture, hostile-room communication, and GitHub+Vercel publishing.",
+  "version": "0.2.0"
 }
