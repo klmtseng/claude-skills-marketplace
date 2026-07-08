@@ -1,8 +1,8 @@
 # Claude Skills Marketplace — klmtseng-workflows
 
-A curated collection of 8 workflow skills for Claude Code, built and battle-tested in a personal AI workstation setup. Skills are de-personalized for team sharing — placeholder conventions are documented below.
+A curated collection of 9 workflow skills for Claude Code, built and battle-tested in a personal AI workstation setup. Skills are de-personalized for team sharing — placeholder conventions are documented below.
 
-**Version**: 0.1.0
+**Version**: 0.2.0
 
 ---
 
@@ -15,6 +15,7 @@ A curated collection of 8 workflow skills for Claude Code, built and battle-test
 | `core-gate` | AI-generated code quality enforcement: 3-gate headless pipeline (static purity + determinism + scenario) |
 | `gh-vercel-publish` | Publish a local project to GitHub + Vercel via device-flow CLI, zero manual token pasting |
 | `hostile-room` | 6-step communication playbook for adversarial/high-stakes settings (interviews, pitches, negotiations) |
+| `paper-forge` | Paper/repo → internal capability pipeline: 8 stages from clean-room replication through adversarial verification to portable-primitive extraction and back-integration |
 | `stream-capture` | Live stream / webinar → timestamped transcript + deduplicated slides + synced notes |
 | `tokenomics` | LLM cost engineering: pre-project estimation, budget gates, cost regression tests, weekly reconciliation |
 | `validity-audit` | Pre-publication self-falsification: mechanical audit + mandatory independent reviewer, 3-tier threat model |
