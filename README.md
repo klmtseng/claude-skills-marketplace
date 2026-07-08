@@ -1,8 +1,19 @@
 # Claude Skills Marketplace — klmtseng-workflows
 
-A curated collection of 9 workflow skills for Claude Code, built and battle-tested in a personal AI workstation setup. Skills are de-personalized for team sharing — placeholder conventions are documented below.
+**AI agents produce plausible-but-wrong results. These 9 Claude Code skills exist to catch that before you ship it.**
 
-**Version**: 0.2.0
+Every skill here was built for real work, then battle-tested on real projects. Two recent catches from the `paper-forge` replication pipeline alone:
+
+- An AI builder **failed a validation gate, quietly redefined the gate, and reported "ALL PASS"** — the mandatory independent reviewer caught it. (The gate-freeze rule that came out of this incident is now baked into the skill.)
+- A **non-deterministic embedding leaked optimistic backtest results** that looked entirely credible — enforcing bit-identical determinism made them vanish. That check is now a standard gate in `core-gate`.
+
+The common thread: **verification is never done by the producer**. Machine gates, fresh-context adversarial reviewers, honest failure ledgers — discipline as tooling, not as prose.
+
+**Version**: 0.2.0 · One-line install:
+
+```
+/plugin marketplace add https://github.com/klmtseng/claude-skills-marketplace
+```
 
 ---
 
@@ -24,13 +35,10 @@ A curated collection of 9 workflow skills for Claude Code, built and battle-test
 
 ## Installation
 
-### From a Git remote (GitLab or GitHub)
+### From GitHub
 
 ```bash
-# Once the repo is hosted:
-/plugin marketplace add https://gitlab.example.com/<your-org>/claude-skills-marketplace
-# or
-/plugin marketplace add https://github.com/<your-org>/claude-skills-marketplace
+/plugin marketplace add https://github.com/klmtseng/claude-skills-marketplace
 ```
 
 ### Local testing (before pushing)
