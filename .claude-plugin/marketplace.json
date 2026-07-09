@@ -8,6 +8,28 @@
       "name": "workflow-skills",
       "source": "./plugins/workflow-skills",
       "description": "8 battle-tested workflow skills: cost estimation, code recon, validity audit, agent memory, deterministic gating, stream capture, hostile-room communication, and GitHub+Vercel publishing."
+    },
+    {
+      "name": "xquik-x-data",
+      "source": "./plugins/xquik-x-data",
+      "description": "Guides Xquik REST API and remote MCP workflows for X data, exports, monitoring, and webhooks.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Xquik",
+        "url": "https://github.com/Xquik-dev/x-twitter-scraper"
+      },
+      "keywords": [
+        "xquik",
+        "x-data",
+        "mcp",
+        "api",
+        "webhooks",
+        "monitoring"
+      ]
     }
-  ]
+  ],
+  "metadata": {
+    "description": "Claude Code workflow skills for verification, research, publishing, and Xquik X data workflows.",
+    "version": "0.2.1"
+  }
 }
