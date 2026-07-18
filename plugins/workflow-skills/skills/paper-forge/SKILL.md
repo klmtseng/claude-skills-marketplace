@@ -10,7 +10,7 @@ description: 把一篇論文 / 一個外部 repo,從理解 → clean-room 重製
 **解法**:把「理解→重製→驗證→萃取→整合」釘成八階段產線(S1–S8),每階段有可機器判定的驗收條件。前段(S1–S5)路由到現成 skill,把力氣集中在別人都跳過、也是最高槓桿的後段(S6–S8):**誠實揭露、可移植原語、回搬接線**。
 
 **適用**:arXiv 論文、GitHub repo、HuggingFace 模型、官方 agent repo、或純概念複刻——任何「外面有個東西,你想吃進來變成自己能力」的情境。
-**不適用**:只想快速讀懂一篇論文說什麼(直接用深度研究工具就好,別套整條產線);純為引用而查一篇文獻(WebFetch 核對即可)。
+**不適用**:只想快速讀懂一篇論文說什麼(直接用 `/deep-research` 就好,別套整條產線);純為引用而查一篇文獻(WebFetch 核對即可)。
 
 ---
 
@@ -18,7 +18,7 @@ description: 把一篇論文 / 一個外部 repo,從理解 → clean-room 重製
 
 | 來源類型 | S1 理解走 | S2 取得走 | 特別注意 |
 |---|---|---|---|
-| **arXiv / 論文** | 深度精讀 + 學術系譜;**引用/標題/作者先 WebFetch 核對**(見雷#1) | 通常無 code,S2=找有沒有官方/第三方參考實作 | 「論文說的」vs「別人解讀」要分清;參考實作自身可能不對齊論文(雷#7) |
+| **arXiv / 論文** | `/deep-research` 精讀 + 學術系譜;**引用/標題/作者先 WebFetch 核對**(見雷#1) | 通常無 code,S2=找有沒有官方/第三方參考實作 | 「論文說的」vs「別人解讀」要分清;參考實作自身可能不對齊論文(雷#7) |
 | **GitHub repo** | `/code-recon`(架構/誰呼叫/blast radius) | `git clone`,原封保留 `original/` 或 `vendor/`(只讀) | 別一 clone 就改;先確認 License 能不能用/改/分享 |
 | **HuggingFace 模型** | 讀 model card + 論文;確認授權與本機能不能載 | HF MCP 工具(先 authenticate)或 `huggingface-cli` | 本機算力限制提早確認(無 GPU/AVX2)——見雷#6 |
 | **官方 agent / 產品 repo** | `/code-recon` + 讀 README/範例 | clone 到 `vendor/` clean-room,不與既有系統混 | 目標常是「抽範本」而非「跑起來」,S7 權重更高 |
